@@ -457,7 +457,7 @@
 				"id": "any_kill",
 				"display_name": {
 					"single": "Убить $to_complete-го любого врага. $completed/$to_complete",
-					"multi:" "Убить $to_complete любых врагов. $completed/$to_complete"
+					"multi": "Убить $to_complete любых врагов. $completed/$to_complete"
 				}
 			},
 			{
