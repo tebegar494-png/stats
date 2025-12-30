@@ -1,486 +1,497 @@
 {
-	"headers": {
-		"server_version": "Test-Realm-1",
-		"spawn": [29.5,4,2.5,0,0]
-	},
-	"stats": {
-		"enemies": [
-			{
-				"entity_type": "slime_spawn_egg",
-				"id": "basic_slime",
-				"category": "slime",
-				"general_type": "overworld",
-				"amount": 4,
-				"spawn_type": "player_depend",
-				"trigger": {
-					"spawn": "trigger",
-					"death": "trigger2",
-					"attack": ""
-				}
-			}
-		],
-		"locations": [
-			{
-				"id": "first_location",
-				"display_name": "Первая локация",
-				"zone": [
-					[38.5,3.5,11.5],
-					[20.5,15.5,32.5]
-				],
-				"enemies": [
-					"basic_slime"
-				],
-				"locations": [
-					[
-						[32.5,4,17.5],
-						[27.5,4,25.5],
-						[34.5,4,21.5],
-						[24.5,4,19.5]
-					]
-				]
-			}
-		],
-		"buffs": [
-			{
-				"id": "test_buff",
-				"display_name": "Тестовый бафф",
-				"icon": "honeycomb",
-				"icon_symbol": "௹",
-				"max_stack": 10,
-				"duration": 600,
-				"boosts": {
-					"critical_chance": {
-						"term": 0,
-						"percentage": 5,
-						"multiplier": 1
-					}
-				}
-			}
-		],
-		"boosts": [
-			{
-				"id": "damage",
-				"max_value": -1,
-				"default_value": {
-					"term": 0,
-					"percentage": 100,
-					"multiplier": 1
-				},
-				"icon": "iron_sword",
-				"display_name": {
-					"nominative": "Базовая атака",
-					"genitive": "базовой атаки",
-					"dative": "базовой атаке"
-				},
-				"icon_symbol": "🪓",
-				"description": [
-					"Определяет, на сколько % будет увеличен",
-					"любой вид урона по всем врагам."
-				]
-			},
-			
-			{
-				"id": "slime_damage",
-				"max_value": -1,
-				"default_value": {
-					"term": 0,
-					"percentage": 0,
-					"multiplier": 1
-				},
-				"icon": "iron_sword",
-				"display_name": {
-					"nominative": "Урон по слизням",
-					"genitive": "урона по слизням",
-					"dative": "урону по слизням"
-				},
-				"icon_symbol": "🪓",
-				"description": [
-					"Определяет, на сколько % будет увеличен",
-					"любой вид урона по слизням."
-				]
-			},
-			
-			{
-				"id": "slith",
-				"max_value": -1,
-				"default_value": {
-					"term": 0,
-					"percentage": 0,
-					"multiplier": 1
-				},
-				"icon": "ender_eye",
-				"display_name": {
-					"nominative": "Скверна",
-					"genitive": "скверны",
-					"dative": "скверне"
-				},
-				"icon_symbol": "☯",
-				"description": [
-					"Определяет, на сколько % будет увеличена",
-					"скверна при любом способе получения."
-				]
-			},
-			
-			{
-				"id": "convert_rate",
-				"max_value": -1,
-				"default_value": {
-					"term": 0,
-					"percentage": 100,
-					"multiplier": 1
-				},
-				"icon": "honey_bottle",
-				"display_name": {
-					"nominative": "Величина конвертации",
-					"genitive": "величины конвертации",
-					"dative": "величине конвертации"
-				},
-				"icon_symbol": "☯ → 🧪",
-				"description": [
-					"Определяет коэффициент конвертации скверны",
-					"в некролит любым способом."
-				]
-			},
-			
-			{
-				"id": "critical_chance",
-				"max_value": 1,
-				"default_value": {
-					"term": 0,
-					"percentage": 0,
-					"multiplier": 1
-				},
-				"icon": "diamond_sword",
-				"display_name": {
-					"nominative": "Шанс критического удара",
-					"genitive": "шанса критического удара",
-					"dative": "шансу критического удара"
-				},
-				"icon_symbol": "🗡",
-				"description": [
-					"Определяет, с каким шансом (в %) обычный",
-					"удар может стать критическим. В виде удара",
-					"может быть атака игрока и сбор скверны."
-				]
-			},
-			
-			{
-				"id": "critical_power",
-				"max_value": -1,
-				"default_value": {
-					"term": 0,
-					"percentage": 200,
-					"multiplier": 1
-				},
-				"icon": "diamond_axe",
-				"display_name": {
-					"nominative": "Сила критического удара",
-					"genitive": "силы критического удара",
-					"dative": "силе критического удара"
-				},
-				"icon_symbol": "x🗡",
-				"description": [
-					"Определяет, на сколько % критический удар",
-					"будет больше обычного. В виде удара может",
-					"быть атака игрока и сбор скверны."
-				]
-			},
-			
-			{
-				"id": "super_critical_chance",
-				"max_value": 1,
-				"default_value": {
-					"term": 1,
-					"percentage": 0,
-					"multiplier": 1
-				},
-				"icon": "netherite_sword",
-				"display_name": {
-					"nominative": "Шанс супер-критического удара",
-					"genitive": "шанса супер-критического удара",
-					"dative": "шансу супер-критического удара"
-				},
-				"icon_symbol": "🗡🗡",
-				"description": [
-					"Определяет, с каким шансом (в %) критический",
-					"удар может стать супер-критическим. В виде удара",
-					"может быть атака игрока и сбор скверны."
-				]
-			},
-			
-			{
-				"id": "super_critical_power",
-				"max_value": -1,
-				"default_value": {
-					"term": 0,
-					"percentage": 200,
-					"multiplier": 1
-				},
-				"icon": "netherite_axe",
-				"display_name": {
-					"nominative": "Сила супер-критического удара",
-					"genitive": "силы супер-критического удара",
-					"dative": "силе супер-критического удара"
-				},
-				"icon_symbol": "x🗡🗡",
-				"description": [
-					"Определяет, на сколько % супер-критический удар",
-					"будет больше критического. В виде удара может",
-					"быть атака игрока и сбор скверны."
-				]
-			},
-			
-			{
-				"id": "capacity",
-				"max_value": -1,
-				"default_value": {
-					"term": 0,
-					"percentage": 100,
-					"multiplier": 1
-				},
-				"icon": "glass_bottle",
-				"display_name": {
-					"nominative": "Ёмкость контейнера",
-					"genitive": "ёмкости контейнера",
-					"dative": "ёмкости контейнера"
-				},
-				"icon_symbol": "🧪",
-				"description": [
-					"Определяет, какой объём скверны может",
-					"хранить ваш контейнер."
-				]
-			}
-			
-			
-		],
-		"items": [
-			
-			{
-				"warp_item": "bamboo",
-				"display_name": {
-					"nominative": "&#C3FF1EСлизневый прут ♮",
-					"genetive": "&#C3FF1Ecлизневого прута ♮",
-					"dative": "&#C3FF1Eслизневому пруту ♮"
-				},
-				"description": [
-					"Отличное оружие, которому нравится убивать",
-					"прыгающих существ, состоящих из слизи, поэтому",
-					"оно наносит больше урона по слизням!"
-				],
-				"max_amount": 1,
-				"activate_func": 0,
-				"id": "slime_wand",
-				"category": "main_weapon",
-				"general_type": "equipment",
-				"equipment_wear_boosts": {
-					"damage": {
-						"term": 0.7,
-						"percentage": 0,
-						"multiplier": 1
-					},
-					"slime_damage": {
-						"term": 0,
-						"percentage": 80,
-						"multiplier": 1
-					}
-				}
-			},
-			{
-				"warp_item": "slime_ball",
-				"display_name": {
-					"nominative": "Шарик слизи",
-					"genetive": "шарика слизи",
-					"dative": "шарику слизи"
-				},
-				"description": [
-					"Дроп со слизней"
-				],
-				"max_amount": -1,
-				"activate_func": 0,
-				"id": "slime_ball",
-				"category": "resource",
-				"general_type": "inventory",
-				"equipment_wear_boosts": {}
-			},
-			{
-				"warp_item": "netherite_helmet",
-				"display_name": {
-					"nominative": "&#FF3B00Демоническая маска &#E03400🔥",
-					"genetive": "&#FF3B00демонической маски &#E03400🔥",
-					"dative": "&#FF3B00демонической маске &#E03400🔥"
-				},
-				"description": [
-					"Маска, пылающая огнём из глубоких недр ада!",
-					"Имеет пассивную способность, которая создаёт",
-					"крест из 21 пламени, которые каждую секунду",
-					"наносят 3 урона ближайшим мобам."
-				],
-				"max_amount": 1,
-				"activate_func": 0,
-				"id": "demon_mask",
-				"category": "mask",
-				"general_type": "equipment",
-				"equipment_wear_boosts": {
-					"damage": {
-						"term": 0,
-						"percentage": 50,
-						"multiplier": 2
-					},
-					"critical_power": {
-						"term": 0,
-						"percentage": 80,
-						"multiplier": 1
-					},
-					"critical_chance": {
-						"term": 0,
-						"percentage": 15,
-						"multiplier": 1
-					},
-					"super_critical_chance": {
-						"term": 0,
-						"percentage": 5,
-						"multiplier": 1
-					}
-				}
-			},
-			{
-				"warp_item": "pink_dye",
-				"display_name": {
-					"nominative": "Нубский рюкзак",
-					"genetive": "нубского рюкзака",
-					"dative": "нубскому рюкзаку"
-				},
-				"description": [
-					"Тестовый рюкзак"
-				],
-				"max_amount": 1,
-				"activate_func": 0,
-				"id": "test_backpack",
-				"category": "backpack",
-				"general_type": "equipment",
-				"equipment_wear_boosts": {
-					"capacity": {
-						"term": 100,
-						"percentage": 0,
-						"multiplier": 1
-					}
-				}
-			}
-		],
-		"quest_lines": [
-			{
-				"id": "test_quest_line",
-				"npc_name": "Тестовый нпс",
-				"quests": [
-					{
-						"id": "helping_with_slimes",
-						"display_name": "Первая помощь",
-						"tasks": {
-							"slime_kill": 1
-						}
-					},
-					{
-						"id": "helping_with_slimes_2",
-						"display_name": "Первая помощь (Не первая)",
-						"tasks": {
-							"slime_kill": 2
-						}
-					},
-					{
-						"id": "afk_simulator",
-						"display_name": "афк симулятор 5+6=67",
-						"tasks": {
-							"slime_kill": 5,
-							"any_kill": 6
-						}
-					}
-				],
-				"dialogs_unclaimed": [
-					[
-						"Привет! Возьми мое задание и выполни его."
-					],
-					[
-						"Второй квест, иди работать!"
-					],
-					[
-						"Оп-оп-оп, работать, работать и трудиться!"
-					]
-				],
-				"dialogs_not_completed": [
-					[
-						"Ты не выполнил мое задание!"
-					],
-					[
-						"Чуваак, иди работай, или я сообщу админу о таком халтурстве!"
-					],
-					[
-						"ты не выполнил! >:("
-					]
-				],
-				"dialogs_completed": [
-					[
-						"Молодец, спасибо!"
-					],
-					[
-						"Долго-долго... Иди гуляй, ниче не дам =)"
-					],
-					[
-						"ыыыыыы"
-					]
-				],
-				"all_quests_are_completed_dialog": [
-					"Ты выполнил все мои квесты!"
-				],
-				"rewards": [
-					{
-						"necrolit": 50,
-						"resources": {}
-					},
-					{
-						"necrolit": 5555,
-						"resources": {
-							"slime_ball": 55
-						}
-					},
-					{
-						"necrolit": 99999999,
-						"resources": {
-							"slime_ball": 9999,
-							"slime_wand": 1
-						}
-					}
-				]
-			}
-		],
-		"tasks": [
-			{
-				"id": "any_kill",
-				"display_name": {
-					"single": "Убить $to_complete-го любого врага. $completed/$to_complete",
-					"multi": "Убить $to_complete любых врагов. $completed/$to_complete"
-				}
-			},
-			{
-				"id": "slime_kill",
-				"display_name": {
-					"single": "Убить $to_complete-го слизня. $completed/$to_complete",
-					"multi": "Убить $to_complete слизней. $completed/$to_complete"
-				}
-			},
-			{
-				"id": "snow_golem_kill",
-				"display_name": {
-					"single": "Убить $to_complete-го снежного голема. $completed/$to_complete",
-					"multi": "Убить $to_complete снежных големов. $completed/$to_complete"
-				}
-			},
-			{
-				"id": "cause_damage_by_crit_attack",
-				"display_name": {
-					"single": "Нанести $to_complete-у критическую атаку любому врагу. $completed/$to_complete",
-					"multi": "Нанести $to_complete критических атак любым врагам. $completed/$to_complete"
-				}
-			}
-		]
-	}
+    "headers": {
+        "server_version": "Test-Realm-1",
+        "spawn": [
+            29.5,
+            4,
+            2.5,
+            0,
+            0
+        ]
+    },
+    "stats": {
+        "enemies": [
+            {
+                "entity_type": "slime_spawn_egg",
+                "id": "basic_slime",
+                "category": "slime",
+                "general_type": "overworld",
+                "amount": 4,
+                "spawn_type": "player_depend",
+                "trigger": {
+                    "spawn": "trigger",
+                    "death": "trigger2",
+                    "attack": ""
+                }
+            }
+        ],
+        "locations": [
+            {
+                "id": "first_location",
+                "display_name": "Первая локация",
+                "zone": [
+                    [
+                        38.5,
+                        3.5,
+                        11.5
+                    ],
+                    [
+                        20.5,
+                        15.5,
+                        32.5
+                    ]
+                ],
+                "enemies": [
+                    "basic_slime"
+                ],
+                "locations": [
+                    [
+                        [
+                            32.5,
+                            4,
+                            17.5
+                        ],
+                        [
+                            27.5,
+                            4,
+                            25.5
+                        ],
+                        [
+                            34.5,
+                            4,
+                            21.5
+                        ],
+                        [
+                            24.5,
+                            4,
+                            19.5
+                        ]
+                    ]
+                ]
+            }
+        ],
+        "buffs": [
+            {
+                "id": "test_buff",
+                "display_name": "Тестовый бафф",
+                "icon": "honeycomb",
+                "icon_symbol": "௹",
+                "max_stack": 10,
+                "duration": 600,
+                "boosts": {
+                    "critical_chance": {
+                        "term": 0,
+                        "percentage": 5,
+                        "multiplier": 1
+                    }
+                }
+            }
+        ],
+        "boosts": [
+            {
+                "id": "damage",
+                "max_value": -1,
+                "default_value": {
+                    "term": 0,
+                    "percentage": 100,
+                    "multiplier": 1
+                },
+                "icon": "iron_sword",
+                "display_name": {
+                    "nominative": "Базовая атака",
+                    "genitive": "базовой атаки",
+                    "dative": "базовой атаке"
+                },
+                "icon_symbol": "🪓",
+                "description": [
+                    "Определяет, на сколько % будет увеличен",
+                    "любой вид урона по всем врагам."
+                ]
+            },
+            {
+                "id": "slime_damage",
+                "max_value": -1,
+                "default_value": {
+                    "term": 0,
+                    "percentage": 0,
+                    "multiplier": 1
+                },
+                "icon": "iron_sword",
+                "display_name": {
+                    "nominative": "Урон по слизням",
+                    "genitive": "урона по слизням",
+                    "dative": "урону по слизням"
+                },
+                "icon_symbol": "🪓",
+                "description": [
+                    "Определяет, на сколько % будет увеличен",
+                    "любой вид урона по слизням."
+                ]
+            },
+            {
+                "id": "slith",
+                "max_value": -1,
+                "default_value": {
+                    "term": 0,
+                    "percentage": 0,
+                    "multiplier": 1
+                },
+                "icon": "ender_eye",
+                "display_name": {
+                    "nominative": "Скверна",
+                    "genitive": "скверны",
+                    "dative": "скверне"
+                },
+                "icon_symbol": "☯",
+                "description": [
+                    "Определяет, на сколько % будет увеличена",
+                    "скверна при любом способе получения."
+                ]
+            },
+            {
+                "id": "convert_rate",
+                "max_value": -1,
+                "default_value": {
+                    "term": 0,
+                    "percentage": 100,
+                    "multiplier": 1
+                },
+                "icon": "honey_bottle",
+                "display_name": {
+                    "nominative": "Величина конвертации",
+                    "genitive": "величины конвертации",
+                    "dative": "величине конвертации"
+                },
+                "icon_symbol": "☯ → 🧪",
+                "description": [
+                    "Определяет коэффициент конвертации скверны",
+                    "в некролит любым способом."
+                ]
+            },
+            {
+                "id": "critical_chance",
+                "max_value": 1,
+                "default_value": {
+                    "term": 0,
+                    "percentage": 0,
+                    "multiplier": 1
+                },
+                "icon": "diamond_sword",
+                "display_name": {
+                    "nominative": "Шанс критического удара",
+                    "genitive": "шанса критического удара",
+                    "dative": "шансу критического удара"
+                },
+                "icon_symbol": "🗡",
+                "description": [
+                    "Определяет, с каким шансом (в %) обычный",
+                    "удар может стать критическим. В виде удара",
+                    "может быть атака игрока и сбор скверны."
+                ]
+            },
+            {
+                "id": "critical_power",
+                "max_value": -1,
+                "default_value": {
+                    "term": 0,
+                    "percentage": 200,
+                    "multiplier": 1
+                },
+                "icon": "diamond_axe",
+                "display_name": {
+                    "nominative": "Сила критического удара",
+                    "genitive": "силы критического удара",
+                    "dative": "силе критического удара"
+                },
+                "icon_symbol": "x🗡",
+                "description": [
+                    "Определяет, на сколько % критический удар",
+                    "будет больше обычного. В виде удара может",
+                    "быть атака игрока и сбор скверны."
+                ]
+            },
+            {
+                "id": "super_critical_chance",
+                "max_value": 1,
+                "default_value": {
+                    "term": 1,
+                    "percentage": 0,
+                    "multiplier": 1
+                },
+                "icon": "netherite_sword",
+                "display_name": {
+                    "nominative": "Шанс супер-критического удара",
+                    "genitive": "шанса супер-критического удара",
+                    "dative": "шансу супер-критического удара"
+                },
+                "icon_symbol": "🗡🗡",
+                "description": [
+                    "Определяет, с каким шансом (в %) критический",
+                    "удар может стать супер-критическим. В виде удара",
+                    "может быть атака игрока и сбор скверны."
+                ]
+            },
+            {
+                "id": "super_critical_power",
+                "max_value": -1,
+                "default_value": {
+                    "term": 0,
+                    "percentage": 200,
+                    "multiplier": 1
+                },
+                "icon": "netherite_axe",
+                "display_name": {
+                    "nominative": "Сила супер-критического удара",
+                    "genitive": "силы супер-критического удара",
+                    "dative": "силе супер-критического удара"
+                },
+                "icon_symbol": "x🗡🗡",
+                "description": [
+                    "Определяет, на сколько % супер-критический удар",
+                    "будет больше критического. В виде удара может",
+                    "быть атака игрока и сбор скверны."
+                ]
+            },
+            {
+                "id": "capacity",
+                "max_value": -1,
+                "default_value": {
+                    "term": 0,
+                    "percentage": 100,
+                    "multiplier": 1
+                },
+                "icon": "glass_bottle",
+                "display_name": {
+                    "nominative": "Ёмкость контейнера",
+                    "genitive": "ёмкости контейнера",
+                    "dative": "ёмкости контейнера"
+                },
+                "icon_symbol": "🧪",
+                "description": [
+                    "Определяет, какой объём скверны может",
+                    "хранить ваш контейнер."
+                ]
+            }
+        ],
+        "items": [
+            {
+                "warp_item": "bamboo",
+                "display_name": {
+                    "nominative": "&#C3FF1EСлизневый прут ♮",
+                    "genetive": "&#C3FF1Ecлизневого прута ♮",
+                    "dative": "&#C3FF1Eслизневому пруту ♮"
+                },
+                "description": [
+                    "Отличное оружие, которому нравится убивать",
+                    "прыгающих существ, состоящих из слизи, поэтому",
+                    "оно наносит больше урона по слизням!"
+                ],
+                "max_amount": 1,
+                "activate_func": 0,
+                "id": "slime_wand",
+                "category": "main_weapon",
+                "general_type": "equipment",
+                "equipment_wear_boosts": {
+                    "damage": {
+                        "term": 0.7,
+                        "percentage": 0,
+                        "multiplier": 1
+                    },
+                    "slime_damage": {
+                        "term": 0,
+                        "percentage": 80,
+                        "multiplier": 1
+                    }
+                }
+            },
+            {
+                "warp_item": "slime_ball",
+                "display_name": {
+                    "nominative": "Шарик слизи",
+                    "genetive": "шарика слизи",
+                    "dative": "шарику слизи"
+                },
+                "description": [
+                    "Дроп со слизней"
+                ],
+                "max_amount": -1,
+                "activate_func": 0,
+                "id": "slime_ball",
+                "category": "resource",
+                "general_type": "inventory",
+                "equipment_wear_boosts": {}
+            },
+            {
+                "warp_item": "netherite_helmet",
+                "display_name": {
+                    "nominative": "&#FF3B00Демоническая маска &#E03400🔥",
+                    "genetive": "&#FF3B00демонической маски &#E03400🔥",
+                    "dative": "&#FF3B00демонической маске &#E03400🔥"
+                },
+                "description": [
+                    "Маска, пылающая огнём из глубоких недр ада!",
+                    "Имеет пассивную способность, которая создаёт",
+                    "крест из 21 пламени, которые каждую секунду",
+                    "наносят 3 урона ближайшим мобам."
+                ],
+                "max_amount": 1,
+                "activate_func": 0,
+                "id": "demon_mask",
+                "category": "mask",
+                "general_type": "equipment",
+                "equipment_wear_boosts": {
+                    "damage": {
+                        "term": 0,
+                        "percentage": 50,
+                        "multiplier": 2
+                    },
+                    "critical_power": {
+                        "term": 0,
+                        "percentage": 80,
+                        "multiplier": 1
+                    },
+                    "critical_chance": {
+                        "term": 0,
+                        "percentage": 15,
+                        "multiplier": 1
+                    },
+                    "super_critical_chance": {
+                        "term": 0,
+                        "percentage": 5,
+                        "multiplier": 1
+                    }
+                }
+            },
+            {
+                "warp_item": "pink_dye",
+                "display_name": {
+                    "nominative": "Нубский рюкзак",
+                    "genetive": "нубского рюкзака",
+                    "dative": "нубскому рюкзаку"
+                },
+                "description": [
+                    "Тестовый рюкзак"
+                ],
+                "max_amount": 1,
+                "activate_func": 0,
+                "id": "test_backpack",
+                "category": "backpack",
+                "general_type": "equipment",
+                "equipment_wear_boosts": {
+                    "capacity": {
+                        "term": 100,
+                        "percentage": 0,
+                        "multiplier": 1
+                    }
+                }
+            }
+        ],
+        "quest_lines": [
+            {
+                "id": "test_quest_line",
+                "npc_name": "Тестовый нпс",
+                "quests": [
+                    "afk_simulator",
+                    "afk_simulator",
+                    "afk_simulator"
+                ],
+                "dialogs_unclaimed": [
+                    [
+                        "Привет! Возьми мое задание и выполни его."
+                    ],
+                    [
+                        "Второй квест, иди работать!"
+                    ],
+                    [
+                        "Оп-оп-оп, работать, работать и трудиться!"
+                    ]
+                ],
+                "dialogs_not_completed": [
+                    [
+                        "Ты не выполнил мое задание!"
+                    ],
+                    [
+                        "Чуваак, иди работай, или я сообщу админу о таком халтурстве!"
+                    ],
+                    [
+                        "ты не выполнил! >:("
+                    ]
+                ],
+                "dialogs_completed": [
+                    [
+                        "Молодец, спасибо!"
+                    ],
+                    [
+                        "Долго-долго... Иди гуляй, ниче не дам =)"
+                    ],
+                    [
+                        "ыыыыыы"
+                    ]
+                ],
+                "all_quests_are_completed_dialog": [
+                    "Ты выполнил все мои квесты!"
+                ],
+                "rewards": [
+                    {
+                        "necrolit": 50,
+                        "resources": {}
+                    },
+                    {
+                        "necrolit": 5555,
+                        "resources": {
+                            "slime_ball": 55
+                        }
+                    },
+                    {
+                        "necrolit": 99999999,
+                        "resources": {
+                            "slime_ball": 9999,
+                            "slime_wand": 1
+                        }
+                    }
+                ]
+            }
+        ],
+        "tasks": [
+            {
+                "id": "any_kill",
+                "display_name": {
+                    "single": "Убить $to_complete-го любого врага. $completed/$to_complete",
+                    "multi": "Убить $to_complete любых врагов. $completed/$to_complete"
+                }
+            },
+            {
+                "id": "slime_kill",
+                "display_name": {
+                    "single": "Убить $to_complete-го слизня. $completed/$to_complete",
+                    "multi": "Убить $to_complete слизней. $completed/$to_complete"
+                }
+            },
+            {
+                "id": "snow_golem_kill",
+                "display_name": {
+                    "single": "Убить $to_complete-го снежного голема. $completed/$to_complete",
+                    "multi": "Убить $to_complete снежных големов. $completed/$to_complete"
+                }
+            },
+            {
+                "id": "cause_damage_by_crit_attack",
+                "display_name": {
+                    "single": "Нанести $to_complete-у критическую атаку любому врагу. $completed/$to_complete",
+                    "multi": "Нанести $to_complete критических атак любым врагам. $completed/$to_complete"
+                }
+            }
+        ],
+        "quests": [
+            {
+                "id": "afk_simulator",
+                "display_name": "афк симулятор 5+6=67",
+                "completed_message": "ыыы афк симулятор",
+                "tasks": {
+                    "slime_kill": 5,
+                    "any_kill": 6
+                }
+            }
+        ]
+    }
 }
