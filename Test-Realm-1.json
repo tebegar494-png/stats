@@ -455,19 +455,31 @@
 		"tasks": [
 			{
 				"id": "any_kill",
-				"display_name": "Убить $to_complete любых врагов. $completed/$to_complete"
+				"display_name": {
+					"single": "Убить $to_complete-го любого врага. $completed/$to_complete",
+					"multi:" "Убить $to_complete любых врагов. $completed/$to_complete"
+				}
 			},
 			{
 				"id": "slime_kill",
-				"display_name": "Убить $to_complete слизней. $completed/$to_complete"
+				"display_name": {
+					"single": "Убить $to_complete-го слизня. $completed/$to_complete",
+					"multi": "Убить $to_complete слизней. $completed/$to_complete"
+				}
 			},
 			{
 				"id": "snow_golem_kill",
-				"display_name": "Убить $to_complete снежных големов. $completed/$to_complete"
+				"display_name": {
+					"single": "Убить $to_complete-го снежного голема. $completed/$to_complete",
+					"multi": "Убить $to_complete снежных големов. $completed/$to_complete"
+				}
 			},
 			{
 				"id": "cause_damage_by_crit_attack",
-				"display_name": "Нанести $to_complete критических атак любым врагам. $completed/$to_complete"
+				"display_name": {
+					"single": "Нанести $to_complete-у критическую атаку любому врагу. $completed/$to_complete",
+					"multi": "Нанести $to_complete критических атак любым врагам. $completed/$to_complete"
+				}
 			}
 		]
 	}
